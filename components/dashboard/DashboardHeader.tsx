@@ -33,7 +33,7 @@ export function DashboardHeader({
             <Button
               variant="outline"
               onClick={() => setShowDatePicker(!showDatePicker)}
-              className="flex items-center space-x-2 border-brand-primary-200 hover:bg-brand-primary-50"
+              className="flex items-center space-x-2 border-brand-primary-200 hover:bg-brand-primary-50  text-brand-primary hover:text-brand-primary-600"
             >
               <Calendar className="w-4 h-4" />
               <span>{dateRange}</span>
@@ -63,7 +63,7 @@ export function DashboardHeader({
 
           <Button
             variant="outline"
-            className="h-9 w-9 p-0 border-brand-primary-200 hover:bg-brand-primary-50"
+            className="h-9 w-9 p-0 border-brand-primary-200 hover:bg-brand-primary-50  text-brand-primary hover:text-brand-primary-600"
             onClick={() => setShowFilters((v) => !v)}
             aria-label="Toggle filters"
             title="Filters"
