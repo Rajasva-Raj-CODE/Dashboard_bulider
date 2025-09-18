@@ -1,7 +1,7 @@
 "use client";
 
 import { jsPDF } from "jspdf";
-import * as XLSX from "xlsx";
+// Removed xlsx import due to security vulnerabilities
 import {
   Expand,
   FileDown,
@@ -90,10 +90,31 @@ export function ChartActionsMenu({
       label,
       ...datasets.map((d: any) => d.data?.[i] ?? ""),
     ]);
-    const ws = XLSX.utils.aoa_to_sheet([header, ...rows]);
-    const wb = XLSX.utils.book_new();
-    XLSX.utils.book_append_sheet(wb, ws, "Data");
-    XLSX.writeFile(wb, `${title}.xlsx`);
+    
+    // Create Excel-compatible XML format (safer alternative to xlsx library)
+    const xmlContent = `<?xml version="1.0"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:x="urn:schemas-microsoft-com:office:excel"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:html="http://www.w3.org/TR/REC-html40">
+ <Worksheet ss:Name="Data">
+  <Table>
+   <Row>
+    ${header.map(cell => `<Cell><Data ss:Type="String">${cell}</Data></Cell>`).join('')}
+   </Row>
+   ${rows.map(row => `
+   <Row>
+    ${row.map(cell => `<Cell><Data ss:Type="String">${cell}</Data></Cell>`).join('')}
+   </Row>`).join('')}
+  </Table>
+ </Worksheet>
+</Workbook>`;
+    
+    const blob = new Blob([xmlContent], { 
+      type: "application/vnd.ms-excel" 
+    });
+    downloadURI(URL.createObjectURL(blob), `${title}.xls`);
   };
 
   const printChart = () => {

@@ -1,0 +1,29 @@
+// Original analytics components
+export { IntranetAnalytics } from './IntranetAnalytics';
+export { PeopleAnalytics } from './PeopleAnalytics';
+export { ContentAnalytics } from './ContentAnalytics';
+export { AttendanceAnalytics } from './AttendanceAnalytics';
+export { HRAnalytics } from './HRAnalytics';
+export { HelpdeskAnalytics } from './HelpdeskAnalytics';
+export { RecruitmentAnalytics } from './RecruitmentAnalytics';
+export { PMSAnalytics } from './PMSAnalytics';
+export { LMSAnalytics } from './LMSAnalytics';
+export { TimesheetAnalytics } from './TimesheetAnalytics';
+export { ExitAnalytics } from './ExitAnalytics';
+export { WorkflowAnalytics } from './WorkflowAnalytics';
+export { WellbeingAnalytics } from './WellbeingAnalytics';
+
+// Analytics components with skeleton loading
+export { IntranetAnalyticsWithSkeleton } from './IntranetAnalyticsWithSkeleton';
+export { PeopleAnalyticsWithSkeleton } from './PeopleAnalyticsWithSkeleton';
+export { ContentAnalyticsWithSkeleton } from './ContentAnalyticsWithSkeleton';
+export { AttendanceAnalyticsWithSkeleton } from './AttendanceAnalyticsWithSkeleton';
+export { HRAnalyticsWithSkeleton } from './HRAnalyticsWithSkeleton';
+export { HelpdeskAnalyticsWithSkeleton } from './HelpdeskAnalyticsWithSkeleton';
+export { RecruitmentAnalyticsWithSkeleton } from './RecruitmentAnalyticsWithSkeleton';
+export { PMSAnalyticsWithSkeleton } from './PMSAnalyticsWithSkeleton';
+export { LMSAnalyticsWithSkeleton } from './LMSAnalyticsWithSkeleton';
+export { TimesheetAnalyticsWithSkeleton } from './TimesheetAnalyticsWithSkeleton';
+export { ExitAnalyticsWithSkeleton } from './ExitAnalyticsWithSkeleton';
+export { WorkflowAnalyticsWithSkeleton } from './WorkflowAnalyticsWithSkeleton';
+export { WellbeingAnalyticsWithSkeleton } from './WellbeingAnalyticsWithSkeleton';

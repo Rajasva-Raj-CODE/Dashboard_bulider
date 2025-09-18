@@ -1,56 +1,94 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { DashboardHeader } from '@/components/dashboard/DashboardHeader';
 import { NavigationSidebar } from '@/components/dashboard/NavigationSidebar';
-import { IntranetAnalytics } from '@/components/analytics/IntranetAnalytics';
-import { PeopleAnalytics } from '@/components/analytics/PeopleAnalytics';
-import { ContentAnalytics } from '@/components/analytics/ContentAnalytics';
-import { AttendanceAnalytics } from '@/components/analytics/AttendanceAnalytics';
-import { HRAnalytics } from '@/components/analytics/HRAnalytics';
-import { HelpdeskAnalytics } from '@/components/analytics/HelpdeskAnalytics';
-import { RecruitmentAnalytics } from '@/components/analytics/RecruitmentAnalytics';
-import { PMSAnalytics } from '@/components/analytics/PMSAnalytics';
-import { LMSAnalytics } from '@/components/analytics/LMSAnalytics';
-import { TimesheetAnalytics } from '@/components/analytics/TimesheetAnalytics';
-import { ExitAnalytics } from '@/components/analytics/ExitAnalytics';
-import { WorkflowAnalytics } from '@/components/analytics/WorkflowAnalytics';
-import { WellbeingAnalytics } from '@/components/analytics/WellbeingAnalytics';
+import { 
+  IntranetAnalyticsWithSkeleton,
+  PeopleAnalyticsWithSkeleton,
+  ContentAnalyticsWithSkeleton,
+  AttendanceAnalyticsWithSkeleton,
+  HRAnalyticsWithSkeleton,
+  HelpdeskAnalyticsWithSkeleton,
+  RecruitmentAnalyticsWithSkeleton,
+  PMSAnalyticsWithSkeleton,
+  LMSAnalyticsWithSkeleton,
+  TimesheetAnalyticsWithSkeleton,
+  ExitAnalyticsWithSkeleton,
+  WorkflowAnalyticsWithSkeleton,
+  WellbeingAnalyticsWithSkeleton
+} from '@/components/analytics';
+import { LayoutSkeleton } from '@/components/skeleton';
+import { useSkeletonLoading } from '@/hooks/useSkeletonLoading';
 
 export default function Dashboard() {
   const [currentPage, setCurrentPage] = useState('intranet');
   const [dateRange, setDateRange] = useState('Sep 1, 2024 - Sep 17, 2025');
+  const [isInitialLoad, setIsInitialLoad] = useState(true);
+  
+  const { loading, startLoading, stopLoading } = useSkeletonLoading({
+    key: 'dashboard',
+    initialLoading: true,
+    delay: 0 // Remove delay to show skeleton immediately
+  });
+
+  // Simulate initial page load
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsInitialLoad(false);
+      stopLoading();
+    }, 1200); // Reduced from 2000ms to 1200ms
+
+    return () => clearTimeout(timer);
+  }, [stopLoading]);
+
+  // Simulate page change loading
+  useEffect(() => {
+    if (!isInitialLoad) {
+      startLoading();
+      const timer = setTimeout(() => {
+        stopLoading();
+      }, 600); // Reduced from 1000ms to 600ms
+
+      return () => clearTimeout(timer);
+    }
+  }, [currentPage, isInitialLoad, startLoading, stopLoading]);
 
   const renderContent = () => {
     switch (currentPage) {
       case 'people':
-        return <PeopleAnalytics />;
+        return <PeopleAnalyticsWithSkeleton />;
       case 'content':
-        return <ContentAnalytics />;
+        return <ContentAnalyticsWithSkeleton />;
       case 'attendance':
-        return <AttendanceAnalytics />;
+        return <AttendanceAnalyticsWithSkeleton />;
       case 'hr':
-        return <HRAnalytics />;
+        return <HRAnalyticsWithSkeleton />;
       case 'helpdesk':
-        return <HelpdeskAnalytics />;
+        return <HelpdeskAnalyticsWithSkeleton />;
       case 'recruitment':
-        return <RecruitmentAnalytics />;
+        return <RecruitmentAnalyticsWithSkeleton />;
       case 'pms':
-        return <PMSAnalytics />;
+        return <PMSAnalyticsWithSkeleton />;
       case 'lms':
-        return <LMSAnalytics />;
+        return <LMSAnalyticsWithSkeleton />;
       case 'timesheet':
-        return <TimesheetAnalytics />;
+        return <TimesheetAnalyticsWithSkeleton />;
       case 'exit':
-        return <ExitAnalytics />;
+        return <ExitAnalyticsWithSkeleton />;
       case 'workflow':
-        return <WorkflowAnalytics />;
+        return <WorkflowAnalyticsWithSkeleton />;
       case 'wellbeing':
-        return <WellbeingAnalytics />;
+        return <WellbeingAnalyticsWithSkeleton />;
       default:
-        return <IntranetAnalytics />;
+        return <IntranetAnalyticsWithSkeleton />;
     }
   };
+
+  // Show skeleton during loading
+  if (loading) {
+    return <LayoutSkeleton />;
+  }
 
   return (
     <div className="min-h-screen bg-gray-50 flex">

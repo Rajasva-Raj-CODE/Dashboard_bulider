@@ -1,0 +1,14 @@
+{
+  "extends": [
+    "next/core-web-vitals",
+    "next/typescript"
+  ],
+  "ignorePatterns": [
+    "out/**/*",
+    "node_modules/**/*",
+    ".next/**/*"
+  ],
+  "rules": {
+    "@typescript-eslint/no-require-imports": "off"
+  }
+}
