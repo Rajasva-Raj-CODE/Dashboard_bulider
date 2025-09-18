@@ -6,6 +6,8 @@ import {
   ArcElement,
   Tooltip,
   Legend,
+  ChartData,
+  ChartOptions,
 } from 'chart.js';
 import { useRef } from 'react';
 import { ChartActionsMenu } from './ChartActionsMenu';
@@ -14,14 +16,14 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 
 interface PieChartProps {
   title: string;
-  data: any;
+  data: ChartData<'doughnut'>;
   centerText?: string;
   height?: number;
 }
 
 export function PieChart({ title, data, centerText, height = 300 }: PieChartProps) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
-  const options = {
+  const options: ChartOptions<'doughnut'> = {
     responsive: true,
     maintainAspectRatio: false,
     cutout: centerText ? '60%' : 0,
@@ -35,6 +37,12 @@ export function PieChart({ title, data, centerText, height = 300 }: PieChartProp
     },
   };
 
+  const handleRef = (chart: any) => {
+    if (chart?.canvas) {
+      canvasRef.current = chart.canvas;
+    }
+  };
+
   return (
     <div>
       <div className="flex items-center justify-between mb-4">
@@ -42,10 +50,7 @@ export function PieChart({ title, data, centerText, height = 300 }: PieChartProp
         <ChartActionsMenu title={title} getCanvas={() => canvasRef.current} getData={() => data} />
       </div>
       <div style={{ height }} className="relative">
-        <Doughnut options={options} data={data} ref={(chart) => {
-          // @ts-ignore
-          canvasRef.current = chart?.canvas || null;
-        }} />
+        <Doughnut options={options} data={data} ref={handleRef} />
         {centerText && (
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="text-center">

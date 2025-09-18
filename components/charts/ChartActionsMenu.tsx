@@ -69,7 +69,7 @@ export function ChartActionsMenu({
     const data = getData();
     if (!data) return;
     const labels: string[] = data.labels || [];
-    const datasets = data.datasets || [];
+    const datasets: any[] = data.datasets || [];
     const header = ["Label", ...datasets.map((d: any) => d.label || "Series")];
     const rows = labels.map((label: string, i: number) => [
       label,
@@ -84,7 +84,7 @@ export function ChartActionsMenu({
     const data = getData();
     if (!data) return;
     const labels: string[] = data.labels || [];
-    const datasets = data.datasets || [];
+    const datasets: any[] = data.datasets || [];
     const header = ["Label", ...datasets.map((d: any) => d.label || "Series")];
     const rows = labels.map((label: string, i: number) => [
       label,

@@ -9,6 +9,8 @@ import {
   Title,
   Tooltip,
   Legend,
+  ChartData,
+  ChartOptions,
 } from 'chart.js';
 import { useRef } from 'react';
 import { ChartActionsMenu } from './ChartActionsMenu';
@@ -24,13 +26,13 @@ ChartJS.register(
 
 interface BarChartProps {
   title: string;
-  data: any;
+  data: ChartData<'bar'>;
   height?: number;
 }
 
 export function BarChart({ title, data, height = 300 }: BarChartProps) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
-  const options = {
+  const options: ChartOptions<'bar'> = {
     responsive: true,
     maintainAspectRatio: false,
     plugins: {
@@ -48,6 +50,12 @@ export function BarChart({ title, data, height = 300 }: BarChartProps) {
     },
   };
 
+  const handleRef = (chart: any) => {
+    if (chart?.canvas) {
+      canvasRef.current = chart.canvas;
+    }
+  };
+
   return (
     <div>
       <div className="flex items-center justify-between mb-4">
@@ -55,10 +63,7 @@ export function BarChart({ title, data, height = 300 }: BarChartProps) {
         <ChartActionsMenu title={title} getCanvas={() => canvasRef.current} getData={() => data} />
       </div>
       <div style={{ height }}>
-        <Bar options={options} data={data} ref={(chart) => {
-          // @ts-ignore
-          canvasRef.current = chart?.canvas || null;
-        }} />
+        <Bar options={options} data={data} ref={handleRef} />
       </div>
     </div>
   );

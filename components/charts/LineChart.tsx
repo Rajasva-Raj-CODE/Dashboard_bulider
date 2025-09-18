@@ -10,6 +10,8 @@ import {
   Title,
   Tooltip,
   Legend,
+  ChartData,
+  ChartOptions,
 } from 'chart.js';
 import { useRef } from 'react';
 import { ChartActionsMenu } from './ChartActionsMenu';
@@ -26,13 +28,13 @@ ChartJS.register(
 
 interface LineChartProps {
   title: string;
-  data: any;
+  data: ChartData<'line'>;
   height?: number;
 }
 
 export function LineChart({ title, data, height = 300 }: LineChartProps) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
-  const options = {
+  const options: ChartOptions<'line'> = {
     responsive: true,
     maintainAspectRatio: false,
     plugins: {
@@ -50,6 +52,12 @@ export function LineChart({ title, data, height = 300 }: LineChartProps) {
     },
   };
 
+  const handleRef = (chart: any) => {
+    if (chart?.canvas) {
+      canvasRef.current = chart.canvas;
+    }
+  };
+
   return (
     <div>
       <div className="flex items-center justify-between mb-4">
@@ -57,10 +65,7 @@ export function LineChart({ title, data, height = 300 }: LineChartProps) {
         <ChartActionsMenu title={title} getCanvas={() => canvasRef.current} getData={() => data} />
       </div>
       <div style={{ height }}>
-        <Line options={options} data={data} ref={(chart) => {
-          // @ts-ignore
-          canvasRef.current = chart?.canvas || null;
-        }} />
+        <Line options={options} data={data} ref={handleRef} />
       </div>
     </div>
   );
