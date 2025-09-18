@@ -29,7 +29,7 @@ export function StatsCard({ title, value, icon: Icon, bgColor, iconColor, toolti
 
   return (
     <TooltipProvider>
-      <Tooltip>
+      <Tooltip delayDuration={0}>
         <TooltipTrigger asChild>
           {card}
         </TooltipTrigger>
