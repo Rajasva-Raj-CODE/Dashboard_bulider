@@ -63,16 +63,16 @@ export const intranetHeatmap = {
   datasets: [{
     label: 'Logins',
     data: Array.from({ length: 20 }, (_, i) => ({ x: i % 5, y: Math.floor(i / 5), v: Math.floor(Math.random() * 10) })),
-    backgroundColor(ctx: any) {
+    backgroundColor(ctx: { raw: { v: number } }) {
       const v = ctx.raw.v;
       return v > 7 ? '#2563EB' : v > 4 ? '#60A5FA' : '#BFDBFE';
     },
-    width: ({ chart }: any) => {
+    width: ({ chart }: { chart?: { chartArea?: { width: number; height: number } } }) => {
       const ca = chart?.chartArea;
       if (!ca) return 20;
       return (ca.width / 5) - 6;
     },
-    height: ({ chart }: any) => {
+    height: ({ chart }: { chart?: { chartArea?: { width: number; height: number } } }) => {
       const ca = chart?.chartArea;
       if (!ca) return 20;
       return (ca.height / 4) - 6;
@@ -92,7 +92,7 @@ export const intranetTreemap = {
     groups: ['label'],
     backgroundColor: '#93C5FD',
     spacing: 0.5,
-    labels: { display: true, formatter: (ctx: any) => ctx.raw.g + '' },
+    labels: { display: true, formatter: (ctx: { raw: { g: string } }) => ctx.raw.g + '' },
   }],
 };
 

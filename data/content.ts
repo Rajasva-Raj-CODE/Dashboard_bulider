@@ -135,15 +135,15 @@ export const contentHeatmap = {
         y: Math.floor(i / 5),
         v: Math.floor(Math.random() * 8),
       })),
-      backgroundColor(ctx: any) {
+      backgroundColor(ctx: { raw: { v: number } }) {
         const v = ctx.raw.v;
         return v > 5 ? "#22C55E" : v > 2 ? "#86EFAC" : "#DCFCE7";
       },
-      width: ({ chart }: any) => {
+      width: ({ chart }: { chart?: { chartArea?: { width: number; height: number } } }) => {
         const ca = chart?.chartArea;
         return ca ? ca.width / 5 - 6 : 20;
       },
-      height: ({ chart }: any) => {
+      height: ({ chart }: { chart?: { chartArea?: { width: number; height: number } } }) => {
         const ca = chart?.chartArea;
         return ca ? ca.height / 4 - 6 : 20;
       },
@@ -164,7 +164,7 @@ export const contentTreemap = {
       groups: ["label"],
       backgroundColor: "#A7F3D0",
       spacing: 0.5,
-      labels: { display: true, formatter: (ctx: any) => ctx.raw.g },
+      labels: { display: true, formatter: (ctx: { raw: { g: string } }) => ctx.raw.g },
     },
   ],
 };
