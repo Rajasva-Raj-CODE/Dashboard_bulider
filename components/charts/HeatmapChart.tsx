@@ -10,13 +10,14 @@ ChartJS.register(CategoryScale, LinearScale, MatrixController, MatrixElement, To
 
 interface HeatmapChartProps { 
   title: string; 
-  data: any; 
+  // Use unknown[] for data points to avoid relying on non-exported types
+  data: ChartData<'matrix', unknown[], unknown>; 
   height?: number; 
 }
 
 export function HeatmapChart({ title, data, height = 300 }: HeatmapChartProps) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
-  const options: any = {
+  const options: ChartOptions<'matrix'> = {
     responsive: true,
     maintainAspectRatio: false,
     plugins: { 
@@ -28,9 +29,10 @@ export function HeatmapChart({ title, data, height = 300 }: HeatmapChartProps) {
     },
   };
 
-  const handleRef = (chart: any) => {
-    if (chart?.canvas) {
-      canvasRef.current = chart.canvas;
+  const handleRef = (chart: unknown) => {
+    const c = chart as { canvas?: HTMLCanvasElement } | null;
+    if (c?.canvas) {
+      canvasRef.current = c.canvas;
     }
   };
 

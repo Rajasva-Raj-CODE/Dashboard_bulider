@@ -2,7 +2,7 @@
 
 import { useRef } from 'react';
 import { Line } from 'react-chartjs-2';
-import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Filler, Tooltip, Legend, ChartData, ChartOptions } from 'chart.js';
+import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Filler, Tooltip, Legend, ChartData, ChartOptions, type Point } from 'chart.js';
 import { ChartActionsMenu } from './ChartActionsMenu';
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Filler, Tooltip, Legend);
@@ -28,7 +28,8 @@ export function AreaChart({ title, data, height = 300, stacked = false }: AreaCh
     },
   };
   
-  const handleRef = (chart: any) => {
+  const handleRef = (instance: unknown) => {
+    const chart = instance as { canvas?: HTMLCanvasElement } | null;
     if (chart?.canvas) {
       canvasRef.current = chart.canvas;
     }

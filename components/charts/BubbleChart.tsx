@@ -23,7 +23,8 @@ export function BubbleChart({ title, data, height = 300 }: BubbleChartProps) {
     } 
   };
 
-  const handleRef = (chart: any) => {
+  const handleRef = (instance: unknown) => {
+    const chart = instance as { canvas?: HTMLCanvasElement } | null;
     if (chart?.canvas) {
       canvasRef.current = chart.canvas;
     }

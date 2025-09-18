@@ -36,7 +36,8 @@ export function GaugeChart({ title, value, height = 240 }: GaugeChartProps) {
     cutout: '70%' 
   };
 
-  const handleRef = (chart: any) => {
+  const handleRef = (instance: unknown) => {
+    const chart = instance as { canvas?: HTMLCanvasElement } | null;
     if (chart?.canvas) {
       canvasRef.current = chart.canvas;
     }

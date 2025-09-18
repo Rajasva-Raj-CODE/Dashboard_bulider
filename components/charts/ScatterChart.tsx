@@ -2,7 +2,7 @@
 
 import { useRef } from 'react';
 import { Scatter } from 'react-chartjs-2';
-import { Chart as ChartJS, LinearScale, PointElement, Tooltip, Legend, ChartData, ChartOptions } from 'chart.js';
+import { Chart as ChartJS, LinearScale, PointElement, Tooltip, Legend, ChartData, ChartOptions, type Point } from 'chart.js';
 import { ChartActionsMenu } from './ChartActionsMenu';
 
 ChartJS.register(LinearScale, PointElement, Tooltip, Legend);
@@ -23,7 +23,8 @@ export function ScatterChart({ title, data, height = 300 }: ScatterChartProps) {
     } 
   };
 
-  const handleRef = (chart: any) => {
+  const handleRef = (instance: unknown) => {
+    const chart = instance as { canvas?: HTMLCanvasElement } | null;
     if (chart?.canvas) {
       canvasRef.current = chart.canvas;
     }

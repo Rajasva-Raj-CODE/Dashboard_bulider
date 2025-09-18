@@ -37,7 +37,8 @@ export function PieChart({ title, data, centerText, height = 300 }: PieChartProp
     },
   };
 
-  const handleRef = (chart: any) => {
+  const handleRef = (instance: unknown) => {
+    const chart = instance as { canvas?: HTMLCanvasElement } | null;
     if (chart?.canvas) {
       canvasRef.current = chart.canvas;
     }

@@ -20,10 +20,13 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
+type MinimalDataset = { label?: string; data?: Array<number | string | null | undefined> };
+type MinimalChartData = { labels?: string[]; datasets?: MinimalDataset[] };
+
 interface ChartActionsMenuProps {
   title: string;
   getCanvas: () => HTMLCanvasElement | null;
-  getData: () => any;
+  getData: () => unknown;
 }
 
 function downloadURI(uri: string, name: string) {
@@ -66,14 +69,14 @@ export function ChartActionsMenu({
   };
 
   const downloadCSV = () => {
-    const data = getData();
+    const data = getData() as MinimalChartData | undefined;
     if (!data) return;
     const labels: string[] = data.labels || [];
-    const datasets: any[] = data.datasets || [];
-    const header = ["Label", ...datasets.map((d: any) => d.label || "Series")];
+    const datasets: MinimalDataset[] = data.datasets || [];
+    const header = ["Label", ...datasets.map((d) => d.label || "Series")];
     const rows = labels.map((label: string, i: number) => [
       label,
-      ...datasets.map((d: any) => d.data?.[i] ?? ""),
+      ...datasets.map((d) => d.data?.[i] ?? ""),
     ]);
     const csv = [header, ...rows].map((r) => r.join(",")).join("\n");
     const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
@@ -81,16 +84,16 @@ export function ChartActionsMenu({
   };
 
   const downloadXLS = () => {
-    const data = getData();
+    const data = getData() as MinimalChartData | undefined;
     if (!data) return;
     const labels: string[] = data.labels || [];
-    const datasets: any[] = data.datasets || [];
-    const header = ["Label", ...datasets.map((d: any) => d.label || "Series")];
+    const datasets: MinimalDataset[] = data.datasets || [];
+    const header = ["Label", ...datasets.map((d) => d.label || "Series")];
     const rows = labels.map((label: string, i: number) => [
       label,
-      ...datasets.map((d: any) => d.data?.[i] ?? ""),
+      ...datasets.map((d) => d.data?.[i] ?? ""),
     ]);
-    
+
     // Create Excel-compatible XML format (safer alternative to xlsx library)
     const xmlContent = `<?xml version="1.0"?>
 <Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
@@ -101,18 +104,26 @@ export function ChartActionsMenu({
  <Worksheet ss:Name="Data">
   <Table>
    <Row>
-    ${header.map(cell => `<Cell><Data ss:Type="String">${cell}</Data></Cell>`).join('')}
+    ${header
+      .map((cell) => `<Cell><Data ss:Type="String">${cell}</Data></Cell>`)
+      .join("")}
    </Row>
-   ${rows.map(row => `
+   ${rows
+     .map(
+       (row) => `
    <Row>
-    ${row.map(cell => `<Cell><Data ss:Type="String">${cell}</Data></Cell>`).join('')}
-   </Row>`).join('')}
+    ${row
+      .map((cell) => `<Cell><Data ss:Type="String">${cell}</Data></Cell>`)
+      .join("")}
+   </Row>`
+     )
+     .join("")}
   </Table>
  </Worksheet>
 </Workbook>`;
-    
-    const blob = new Blob([xmlContent], { 
-      type: "application/vnd.ms-excel" 
+
+    const blob = new Blob([xmlContent], {
+      type: "application/vnd.ms-excel",
     });
     downloadURI(URL.createObjectURL(blob), `${title}.xls`);
   };

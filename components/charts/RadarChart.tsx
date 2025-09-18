@@ -23,7 +23,8 @@ export function RadarChart({ title, data, height = 300 }: RadarChartProps) {
     } 
   };
 
-  const handleRef = (chart: any) => {
+  const handleRef = (instance: unknown) => {
+    const chart = instance as { canvas?: HTMLCanvasElement } | null;
     if (chart?.canvas) {
       canvasRef.current = chart.canvas;
     }

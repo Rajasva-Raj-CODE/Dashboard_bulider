@@ -9,13 +9,14 @@ ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, BarEleme
 
 interface MixedChartProps { 
   title: string; 
-  data: any; 
+  // Rendered as a 'bar' chart; datasets may override their type (e.g., 'line')
+  data: ChartData<'bar'>; 
   height?: number; 
 }
 
 export function MixedChart({ title, data, height = 300 }: MixedChartProps) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
-  const options: any = { 
+  const options: ChartOptions<'bar'> = { 
     responsive: true, 
     maintainAspectRatio: false, 
     plugins: { 
@@ -23,7 +24,8 @@ export function MixedChart({ title, data, height = 300 }: MixedChartProps) {
     } 
   };
 
-  const handleRef = (chart: any) => {
+  const handleRef = (instance: unknown) => {
+    const chart = instance as { canvas?: HTMLCanvasElement } | null;
     if (chart?.canvas) {
       canvasRef.current = chart.canvas;
     }

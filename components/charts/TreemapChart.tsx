@@ -10,13 +10,14 @@ ChartJS.register(TreemapController, TreemapElement, Tooltip, Legend);
 
 interface TreemapChartProps { 
   title: string; 
-  data: any; 
+  // Use unknown[] to avoid relying on non-exported TreemapDataPoint type
+  data: ChartData<'treemap', unknown[], unknown>; 
   height?: number; 
 }
 
 export function TreemapChart({ title, data, height = 300 }: TreemapChartProps) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
-  const options: any = { 
+  const options: ChartOptions<'treemap'> = { 
     responsive: true, 
     maintainAspectRatio: false, 
     plugins: { 
@@ -24,9 +25,10 @@ export function TreemapChart({ title, data, height = 300 }: TreemapChartProps) {
     } 
   };
 
-  const handleRef = (chart: any) => {
-    if (chart?.canvas) {
-      canvasRef.current = chart.canvas;
+  const handleRef = (chart: unknown) => {
+    const c = chart as { canvas?: HTMLCanvasElement } | null;
+    if (c?.canvas) {
+      canvasRef.current = c.canvas;
     }
   };
 
