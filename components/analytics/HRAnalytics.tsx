@@ -22,28 +22,28 @@ export function HRAnalytics() {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div className="bg-white rounded-lg border border-gray-200 p-6">
+        <div className="bg-white rounded-lg border border-brand-primary-200 p-6">
           <LineChart title="Headcount Trend" data={hrHeadcountTrend} height={300} />
         </div>
-        <div className="bg-white rounded-lg border border-gray-200 p-6">
+        <div className="bg-white rounded-lg border border-brand-primary-200 p-6">
           <BarChart title="Attrition by Month" data={hrAttritionByMonth} height={300} />
         </div>
       </div>
 
       {/* Showcase */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div className="bg-white rounded-lg border border-gray-200 p-6"><AreaChart title="Hires vs Exits" data={hrArea} height={280} stacked /></div>
-        <div className="bg-white rounded-lg border border-gray-200 p-6"><ScatterChart title="Age vs Salary" data={hrScatter} height={280} /></div>
+        <div className="bg-white rounded-lg border border-brand-primary-200 p-6"><AreaChart title="Hires vs Exits" data={hrArea} height={280} stacked /></div>
+        <div className="bg-white rounded-lg border border-brand-primary-200 p-6"><ScatterChart title="Age vs Salary" data={hrScatter} height={280} /></div>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div className="bg-white rounded-lg border border-gray-200 p-6"><BubbleChart title="Team Size" data={hrBubble} height={280} /></div>
-        <div className="bg-white rounded-lg border border-gray-200 p-6"><HeatmapChart title="Interview Heat" data={hrHeatmap} height={280} /></div>
+        <div className="bg-white rounded-lg border border-brand-primary-200 p-6"><BubbleChart title="Team Size" data={hrBubble} height={280} /></div>
+        <div className="bg-white rounded-lg border border-brand-primary-200 p-6"><HeatmapChart title="Interview Heat" data={hrHeatmap} height={280} /></div>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div className="bg-white rounded-lg border border-gray-200 p-6"><TreemapChart title="Headcount Split" data={hrTreemap} height={280} /></div>
-        <div className="bg-white rounded-lg border border-gray-200 p-6"><RadarChart title="HR Index" data={hrRadar} height={280} /></div>
+        <div className="bg-white rounded-lg border border-brand-primary-200 p-6"><TreemapChart title="Headcount Split" data={hrTreemap} height={280} /></div>
+        <div className="bg-white rounded-lg border border-brand-primary-200 p-6"><RadarChart title="HR Index" data={hrRadar} height={280} /></div>
       </div>
-      <div className="bg-white rounded-lg border border-gray-200 p-6"><MixedChart title="Hires vs Attrition %" data={hrMixed} height={280} /></div>
+      <div className="bg-white rounded-lg border border-brand-primary-200 p-6"><MixedChart title="Hires vs Attrition %" data={hrMixed} height={280} /></div>
     </div>
   );
 }

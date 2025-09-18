@@ -23,7 +23,7 @@ export function DashboardHeader({
   const [showFilters, setShowFilters] = useState(false);
 
   return (
-    <header className="bg-white border-b border-gray-200 px-6 py-4 sticky top-0 z-20">
+    <header className="bg-white border-b border-brand-primary-200 px-6 py-4 sticky top-0 z-20">
       <div className="flex items-center justify-between">
         <div className="flex items-center space-x-4">
           <h1 className="text-2xl font-semibold text-gray-900">{title}</h1>
@@ -33,7 +33,7 @@ export function DashboardHeader({
             <Button
               variant="outline"
               onClick={() => setShowDatePicker(!showDatePicker)}
-              className="flex items-center space-x-2"
+              className="flex items-center space-x-2 border-brand-primary-200 hover:bg-brand-primary-50"
             >
               <Calendar className="w-4 h-4" />
               <span>{dateRange}</span>
@@ -50,7 +50,7 @@ export function DashboardHeader({
           </div>
 
           <Button
-            className="bg-emerald-500 hover:bg-emerald-600 text-white"
+            className="bg-brand-secondary hover:bg-brand-secondary-600 text-white"
             onClick={() => setShowAddDialog(true)}
           >
             <Plus className="w-4 h-4 mr-2" />
@@ -63,7 +63,7 @@ export function DashboardHeader({
 
           <Button
             variant="outline"
-            className="h-9 w-9 p-0"
+            className="h-9 w-9 p-0 border-brand-primary-200 hover:bg-brand-primary-50"
             onClick={() => setShowFilters((v) => !v)}
             aria-label="Toggle filters"
             title="Filters"

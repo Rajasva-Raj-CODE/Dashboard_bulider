@@ -25,7 +25,7 @@ export function NavigationSidebar({ currentPage, onPageChange }: NavigationSideb
   ];
 
   return (
-    <aside className="fixed left-0 top-0 h-screen w-80 bg-white border-r border-gray-200 overflow-y-auto rounded-r-2xl shadow-sm">
+    <aside className="fixed left-0 top-0 h-screen w-80 bg-white border-r border-brand-primary-200 overflow-y-auto rounded-r-2xl shadow-sm">
       <div className="p-6 pt-8">
         <nav className="space-y-2">
           {navigationItems.map((item) => (
@@ -34,12 +34,12 @@ export function NavigationSidebar({ currentPage, onPageChange }: NavigationSideb
               onClick={() => onPageChange(item.id)}
               className={`w-full flex items-center justify-between p-3 text-left rounded-xl border transition-colors ${
                 currentPage === item.id 
-                  ? 'bg-blue-50 border-blue-200 text-blue-700' 
-                  : 'border-gray-200 text-gray-700 hover:bg-gray-50'
+                  ? 'bg-brand-primary-50 border-brand-primary-200 text-brand-primary-700' 
+                  : 'border-brand-primary-200 text-gray-700 hover:bg-brand-primary-50'
               }`}
             >
-              <span>{item.label}</span>
-              <ExternalLink className="w-4 h-4 text-gray-400" />
+              <span className="text-gray-800">{item.label}</span>
+              <ExternalLink className="w-4 h-4 text-brand-primary-500" />
             </button>
           ))}
         </nav>

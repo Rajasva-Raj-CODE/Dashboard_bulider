@@ -12,7 +12,7 @@ export function StatsCardSkeleton({
   ...props 
 }: StatsCardSkeletonProps) {
   return (
-    <div className={cn('bg-white rounded-lg border border-gray-200 p-6', className)} {...props}>
+    <div className={cn('bg-white rounded-lg border border-brand-primary-200 p-6', className)} {...props}>
       <div className="flex items-center justify-between">
         <div className="flex-1">
           {showTitle && (

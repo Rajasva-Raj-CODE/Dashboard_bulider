@@ -30,46 +30,46 @@ export function ExitAnalytics() {
 
       {/* Charts Layout matching image */}
       <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
-        <div className="bg-white rounded-lg border border-gray-200 p-6">
+        <div className="bg-white rounded-lg border border-brand-primary-200 p-6">
           <LineChart title="Attrition Rate" data={attritionRateData} height={280} />
         </div>
-        <div className="bg-white rounded-lg border border-gray-200 p-6">
+        <div className="bg-white rounded-lg border border-brand-primary-200 p-6">
           <BarChart title="Exit Count" data={exitCountData} height={280} />
         </div>
       </div>
 
       <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
-        <div className="bg-white rounded-lg border border-gray-200 p-6">
+        <div className="bg-white rounded-lg border border-brand-primary-200 p-6">
           <BarChart title="Reasons for Exit" data={exitReasons} height={280} />
         </div>
-        <div className="bg-white rounded-lg border border-gray-200 p-6">
+        <div className="bg-white rounded-lg border border-brand-primary-200 p-6">
           <BarChart title="Type of Exit" data={typeOfExitData} height={280} />
         </div>
       </div>
 
       <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
-        <div className="bg-white rounded-lg border border-gray-200 p-6">
+        <div className="bg-white rounded-lg border border-brand-primary-200 p-6">
           <PieChart title="Exit by Tenure" data={exitByTenure} height={280} />
         </div>
-        <div className="bg-white rounded-lg border border-gray-200 p-6">
+        <div className="bg-white rounded-lg border border-brand-primary-200 p-6">
           <PieChart title="Regretted Vs Not Regretted Exits" data={regrettedVsNot} height={280} />
         </div>
       </div>
 
       {/* Showcase */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div className="bg-white rounded-lg border border-gray-200 p-6"><AreaChart title="Resignations vs Retained" data={exitArea} height={280} stacked /></div>
-        <div className="bg-white rounded-lg border border-gray-200 p-6"><ScatterChart title="Tenure vs Score" data={exitScatter} height={280} /></div>
+        <div className="bg-white rounded-lg border border-brand-primary-200 p-6"><AreaChart title="Resignations vs Retained" data={exitArea} height={280} stacked /></div>
+        <div className="bg-white rounded-lg border border-brand-primary-200 p-6"><ScatterChart title="Tenure vs Score" data={exitScatter} height={280} /></div>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div className="bg-white rounded-lg border border-gray-200 p-6"><BubbleChart title="Dept Exits" data={exitBubble} height={280} /></div>
-        <div className="bg-white rounded-lg border border-gray-200 p-6"><HeatmapChart title="Exit Events Heat" data={exitHeatmap} height={280} /></div>
+        <div className="bg-white rounded-lg border border-brand-primary-200 p-6"><BubbleChart title="Dept Exits" data={exitBubble} height={280} /></div>
+        <div className="bg-white rounded-lg border border-brand-primary-200 p-6"><HeatmapChart title="Exit Events Heat" data={exitHeatmap} height={280} /></div>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div className="bg-white rounded-lg border border-gray-200 p-6"><TreemapChart title="Exits by Department" data={exitTreemap} height={280} /></div>
-        <div className="bg-white rounded-lg border border-gray-200 p-6"><RadarChart title="Reasons Weight" data={exitRadar} height={280} /></div>
+        <div className="bg-white rounded-lg border border-brand-primary-200 p-6"><TreemapChart title="Exits by Department" data={exitTreemap} height={280} /></div>
+        <div className="bg-white rounded-lg border border-brand-primary-200 p-6"><RadarChart title="Reasons Weight" data={exitRadar} height={280} /></div>
       </div>
-      <div className="bg-white rounded-lg border border-gray-200 p-6"><MixedChart title="Exits vs Attrition %" data={exitMixed} height={280} /></div>
+      <div className="bg-white rounded-lg border border-brand-primary-200 p-6"><MixedChart title="Exits vs Attrition %" data={exitMixed} height={280} /></div>
     </div>
   );
 }

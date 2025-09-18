@@ -24,24 +24,27 @@
     --card-foreground: 0 0% 3.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 3.9%;
-    --primary: 0 0% 9%;
+    /* Brand colors - Primary Blue #2C83EC */
+    --primary: 214 100% 58%; /* #2C83EC converted to HSL */
     --primary-foreground: 0 0% 98%;
-    --secondary: 0 0% 96.1%;
-    --secondary-foreground: 0 0% 9%;
+    /* Brand colors - Secondary Green #87C232 */
+    --secondary: 89 50% 48%; /* #87C232 converted to HSL */
+    --secondary-foreground: 0 0% 98%;
     --muted: 0 0% 96.1%;
     --muted-foreground: 0 0% 45.1%;
-    --accent: 0 0% 96.1%;
-    --accent-foreground: 0 0% 9%;
+    --accent: 89 50% 48%; /* Using secondary brand color for accent */
+    --accent-foreground: 0 0% 98%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 0 0% 3.9%;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
+    --border: 214 20% 89%; /* Light version of brand primary */
+    --input: 214 20% 89%;
+    --ring: 214 100% 58%; /* Brand primary for focus rings */
+    /* Chart colors using brand palette */
+    --chart-1: 214 100% 58%; /* Brand primary */
+    --chart-2: 89 50% 48%; /* Brand secondary */
+    --chart-3: 214 60% 45%; /* Darker brand primary */
+    --chart-4: 89 40% 40%; /* Darker brand secondary */
+    --chart-5: 214 80% 65%; /* Lighter brand primary */
     --radius: 0.5rem;
   }
   .dark {
@@ -51,24 +54,26 @@
     --card-foreground: 0 0% 98%;
     --popover: 0 0% 3.9%;
     --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
+    /* Brand colors for dark mode - adjusted for better contrast */
+    --primary: 214 100% 65%; /* Slightly lighter brand primary for dark mode */
     --primary-foreground: 0 0% 9%;
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 89 50% 55%; /* Slightly lighter brand secondary for dark mode */
+    --secondary-foreground: 0 0% 9%;
     --muted: 0 0% 14.9%;
     --muted-foreground: 0 0% 63.9%;
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
+    --accent: 89 50% 55%; /* Using secondary brand color for accent */
+    --accent-foreground: 0 0% 9%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --ring: 0 0% 83.1%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
+    --border: 214 20% 20%; /* Darker brand primary for borders */
+    --input: 214 20% 20%;
+    --ring: 214 100% 65%; /* Brand primary for focus rings in dark mode */
+    /* Chart colors using brand palette for dark mode */
+    --chart-1: 214 100% 65%; /* Brand primary */
+    --chart-2: 89 50% 55%; /* Brand secondary */
+    --chart-3: 214 60% 50%; /* Medium brand primary */
+    --chart-4: 89 40% 45%; /* Medium brand secondary */
+    --chart-5: 214 80% 70%; /* Light brand primary */
   }
 }
 
@@ -86,13 +91,13 @@
   width: 6px;
 }
 .custom-scrollbar::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #EBF4FF; /* Brand primary 50 */
   border-radius: 10px;
 }
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background: #cbd5e0;
+  background: #2C83EC; /* Brand primary */
   border-radius: 10px;
 }
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: #a0aec0;
+  background: #256BC7; /* Brand primary 600 */
 }

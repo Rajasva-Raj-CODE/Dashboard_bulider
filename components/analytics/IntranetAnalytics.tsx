@@ -31,7 +31,7 @@ export function IntranetAnalytics() {
 
       {/* Charts Row */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div className="bg-white rounded-lg border border-gray-200 p-6">
+        <div className="bg-white rounded-lg border border-brand-primary-200 p-6">
           <LineChart 
             title="Total Daily Logins"
             data={intranetLoginData}
@@ -39,7 +39,7 @@ export function IntranetAnalytics() {
           />
         </div>
         
-        <div className="bg-white rounded-lg border border-gray-200 p-6">
+        <div className="bg-white rounded-lg border border-brand-primary-200 p-6">
           <BarChart 
             title="Trending Topics"
             data={intranetTrendingData}
@@ -49,7 +49,7 @@ export function IntranetAnalytics() {
       </div>
 
       {/* Bottom Chart */}
-      <div className="bg-white rounded-lg border border-gray-200 p-6">
+      <div className="bg-white rounded-lg border border-brand-primary-200 p-6">
         <BarChart 
           title="Likes, Post & Comments"
           data={intranetLikesData}
@@ -59,30 +59,30 @@ export function IntranetAnalytics() {
 
       {/* Showcase additional chart types */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div className="bg-white rounded-lg border border-gray-200 p-6">
+        <div className="bg-white rounded-lg border border-brand-primary-200 p-6">
           <AreaChart title="Stacked Area" data={intranetAreaStacked} height={280} stacked />
         </div>
-        <div className="bg-white rounded-lg border border-gray-200 p-6">
+        <div className="bg-white rounded-lg border border-brand-primary-200 p-6">
           <ScatterChart title="Scatter Plot" data={intranetScatter} height={280} />
         </div>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div className="bg-white rounded-lg border border-gray-200 p-6">
+        <div className="bg-white rounded-lg border border-brand-primary-200 p-6">
           <BubbleChart title="Bubble Chart" data={intranetBubble} height={280} />
         </div>
-        <div className="bg-white rounded-lg border border-gray-200 p-6">
+        <div className="bg-white rounded-lg border border-brand-primary-200 p-6">
           <HeatmapChart title="Heatmap" data={intranetHeatmap} height={280} />
         </div>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div className="bg-white rounded-lg border border-gray-200 p-6">
+        <div className="bg-white rounded-lg border border-brand-primary-200 p-6">
           <TreemapChart title="Treemap" data={intranetTreemap} height={280} />
         </div>
         <div className="bg-white rounded-lg border border-gray-200 p-6">
           <RadarChart title="Radar" data={intranetRadar} height={280} />
         </div>
       </div>
-      <div className="bg-white rounded-lg border border-gray-200 p-6">
+      <div className="bg-white rounded-lg border border-brand-primary-200 p-6">
         <MixedChart title="Mixed Bar + Line" data={intranetMixed} height={280} />
       </div>
     </div>

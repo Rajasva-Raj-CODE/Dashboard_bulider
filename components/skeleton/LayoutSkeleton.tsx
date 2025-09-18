@@ -15,7 +15,7 @@ export function LayoutSkeleton({
   className
 }: LayoutSkeletonProps & { className?: string }) {
   return (
-    <div className={cn('min-h-screen bg-gray-50 flex', className)}>
+    <div className={cn('min-h-screen bg-brand-primary-50 flex', className)}>
       {/* Left Sidebar */}
       {showSidebar && <SidebarSkeleton />}
 

@@ -152,7 +152,7 @@ export function DateRangePicker({ currentRange, onChange, onClose }: DateRangePi
   return (
     <Card className="absolute top-12 right-0 w-[600px] p-0 shadow-lg border z-50 bg-white">
       {/* Header with date range display */}
-      <div className="p-4 border-b border-gray-200">
+      <div className="p-4 border-b border-brand-primary-200">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
             <CalendarIcon className="w-4 h-4 text-gray-500" />
@@ -165,7 +165,7 @@ export function DateRangePicker({ currentRange, onChange, onClose }: DateRangePi
 
       <div className="flex">
         {/* Quick Range Options */}
-        <div className="w-48 bg-gray-50 p-4 border-r">
+        <div className="w-48 bg-brand-primary-50 p-4 border-r border-brand-primary-200">
           <div className="space-y-1">
             {quickRanges.map((range) => (
               <button
@@ -173,8 +173,8 @@ export function DateRangePicker({ currentRange, onChange, onClose }: DateRangePi
                 onClick={() => handleQuickRangeSelect(range)}
                 className={`w-full text-left px-3 py-2 text-sm rounded transition-colors ${
                   selectedRange === range
-                    ? 'bg-blue-500 text-white'
-                    : 'text-gray-700 hover:bg-white hover:shadow-sm'
+                    ? 'bg-brand-primary text-white'
+                    : 'text-gray-700 hover:bg-brand-primary-50 hover:shadow-sm'
                 }`}
               >
                 {range}

@@ -21,27 +21,27 @@ export function WorkflowAnalytics() {
         ))}
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div className="bg-white rounded-lg border border-gray-200 p-6">
+        <div className="bg-white rounded-lg border border-brand-primary-200 p-6">
           <BarChart title="Workflow Throughput" data={workflowThroughput} height={300} />
         </div>
-        <div className="bg-white rounded-lg border border-gray-200 p-6">
+        <div className="bg-white rounded-lg border border-brand-primary-200 p-6">
           <PieChart title="Items by State" data={workflowStates} height={300} />
         </div>
       </div>
       {/* Showcase */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div className="bg-white rounded-lg border border-gray-200 p-6"><AreaChart title="Started vs Completed" data={workflowArea} height={280} stacked /></div>
-        <div className="bg-white rounded-lg border border-gray-200 p-6"><ScatterChart title="Cycle Time vs Items" data={workflowScatter} height={280} /></div>
+        <div className="bg-white rounded-lg border border-brand-primary-200 p-6"><AreaChart title="Started vs Completed" data={workflowArea} height={280} stacked /></div>
+        <div className="bg-white rounded-lg border border-brand-primary-200 p-6"><ScatterChart title="Cycle Time vs Items" data={workflowScatter} height={280} /></div>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div className="bg-white rounded-lg border border-gray-200 p-6"><BubbleChart title="Workflow Load" data={workflowBubble} height={280} /></div>
-        <div className="bg-white rounded-lg border border-gray-200 p-6"><HeatmapChart title="Throughput Heat" data={workflowHeatmap} height={280} /></div>
+        <div className="bg-white rounded-lg border border-brand-primary-200 p-6"><BubbleChart title="Workflow Load" data={workflowBubble} height={280} /></div>
+        <div className="bg-white rounded-lg border border-brand-primary-200 p-6"><HeatmapChart title="Throughput Heat" data={workflowHeatmap} height={280} /></div>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div className="bg-white rounded-lg border border-gray-200 p-6"><TreemapChart title="Workflow Types" data={workflowTreemap} height={280} /></div>
-        <div className="bg-white rounded-lg border border-gray-200 p-6"><RadarChart title="Workflow Index" data={workflowRadar} height={280} /></div>
+        <div className="bg-white rounded-lg border border-brand-primary-200 p-6"><TreemapChart title="Workflow Types" data={workflowTreemap} height={280} /></div>
+        <div className="bg-white rounded-lg border border-brand-primary-200 p-6"><RadarChart title="Workflow Index" data={workflowRadar} height={280} /></div>
       </div>
-      <div className="bg-white rounded-lg border border-gray-200 p-6"><MixedChart title="Completed vs Cycle Time" data={workflowMixed} height={280} /></div>
+      <div className="bg-white rounded-lg border border-brand-primary-200 p-6"><MixedChart title="Completed vs Cycle Time" data={workflowMixed} height={280} /></div>
     </div>
   );
 }

@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import { DashboardHeader } from '@/components/dashboard/DashboardHeader';
-import { NavigationSidebar } from '@/components/dashboard/NavigationSidebar';
-import { 
+import { useState, useEffect } from "react";
+import { DashboardHeader } from "@/components/dashboard/DashboardHeader";
+import { NavigationSidebar } from "@/components/dashboard/NavigationSidebar";
+import {
   IntranetAnalyticsWithSkeleton,
   PeopleAnalyticsWithSkeleton,
   ContentAnalyticsWithSkeleton,
@@ -16,20 +16,20 @@ import {
   TimesheetAnalyticsWithSkeleton,
   ExitAnalyticsWithSkeleton,
   WorkflowAnalyticsWithSkeleton,
-  WellbeingAnalyticsWithSkeleton
-} from '@/components/analytics';
-import { LayoutSkeleton } from '@/components/skeleton';
-import { useSkeletonLoading } from '@/hooks/useSkeletonLoading';
+  WellbeingAnalyticsWithSkeleton,
+} from "@/components/analytics";
+import { LayoutSkeleton } from "@/components/skeleton";
+import { useSkeletonLoading } from "@/hooks/useSkeletonLoading";
 
 export default function Dashboard() {
-  const [currentPage, setCurrentPage] = useState('intranet');
-  const [dateRange, setDateRange] = useState('Sep 1, 2024 - Sep 17, 2025');
+  const [currentPage, setCurrentPage] = useState("intranet");
+  const [dateRange, setDateRange] = useState("Sep 1, 2024 - Sep 17, 2025");
   const [isInitialLoad, setIsInitialLoad] = useState(true);
-  
+
   const { loading, startLoading, stopLoading } = useSkeletonLoading({
-    key: 'dashboard',
+    key: "dashboard",
     initialLoading: true,
-    delay: 0 // Remove delay to show skeleton immediately
+    delay: 0, // Remove delay to show skeleton immediately
   });
 
   // Simulate initial page load
@@ -56,29 +56,29 @@ export default function Dashboard() {
 
   const renderContent = () => {
     switch (currentPage) {
-      case 'people':
+      case "people":
         return <PeopleAnalyticsWithSkeleton />;
-      case 'content':
+      case "content":
         return <ContentAnalyticsWithSkeleton />;
-      case 'attendance':
+      case "attendance":
         return <AttendanceAnalyticsWithSkeleton />;
-      case 'hr':
+      case "hr":
         return <HRAnalyticsWithSkeleton />;
-      case 'helpdesk':
+      case "helpdesk":
         return <HelpdeskAnalyticsWithSkeleton />;
-      case 'recruitment':
+      case "recruitment":
         return <RecruitmentAnalyticsWithSkeleton />;
-      case 'pms':
+      case "pms":
         return <PMSAnalyticsWithSkeleton />;
-      case 'lms':
+      case "lms":
         return <LMSAnalyticsWithSkeleton />;
-      case 'timesheet':
+      case "timesheet":
         return <TimesheetAnalyticsWithSkeleton />;
-      case 'exit':
+      case "exit":
         return <ExitAnalyticsWithSkeleton />;
-      case 'workflow':
+      case "workflow":
         return <WorkflowAnalyticsWithSkeleton />;
-      case 'wellbeing':
+      case "wellbeing":
         return <WellbeingAnalyticsWithSkeleton />;
       default:
         return <IntranetAnalyticsWithSkeleton />;
@@ -93,7 +93,7 @@ export default function Dashboard() {
   return (
     <div className="min-h-screen bg-gray-50 flex">
       {/* Left Sidebar */}
-      <NavigationSidebar 
+      <NavigationSidebar
         currentPage={currentPage}
         onPageChange={setCurrentPage}
       />
@@ -101,21 +101,33 @@ export default function Dashboard() {
       {/* Main Content */}
       <div className="flex-1 flex flex-col pl-80">
         {/* Header */}
-        <DashboardHeader 
+        <DashboardHeader
           title={
-            currentPage === 'intranet' ? 'Intranet Analytics' :
-            currentPage === 'people' ? 'People Analytics' :
-            currentPage === 'content' ? 'Content Analytics' :
-            currentPage === 'attendance' ? 'Attendance Analytics' :
-            currentPage === 'hr' ? 'HR Analytics' :
-            currentPage === 'helpdesk' ? 'Helpdesk / Support Ticket Stats' :
-            currentPage === 'recruitment' ? 'Recruitment Analytics' :
-            currentPage === 'pms' ? 'PMS Analytics' :
-            currentPage === 'lms' ? 'LMS Analytics' :
-            currentPage === 'timesheet' ? 'Timesheet Analytics' :
-            currentPage === 'exit' ? 'Exit Insights' :
-            currentPage === 'workflow' ? 'Workflow Dashboard' :
-            'Employee Well-Being'
+            currentPage === "intranet"
+              ? "Intranet Analytics"
+              : currentPage === "people"
+              ? "People Analytics"
+              : currentPage === "content"
+              ? "Content Analytics"
+              : currentPage === "attendance"
+              ? "Attendance Analytics"
+              : currentPage === "hr"
+              ? "HR Analytics"
+              : currentPage === "helpdesk"
+              ? "Helpdesk / Support Ticket Stats"
+              : currentPage === "recruitment"
+              ? "Recruitment Analytics"
+              : currentPage === "pms"
+              ? "PMS Analytics"
+              : currentPage === "lms"
+              ? "LMS Analytics"
+              : currentPage === "timesheet"
+              ? "Timesheet Analytics"
+              : currentPage === "exit"
+              ? "Exit Insights"
+              : currentPage === "workflow"
+              ? "Workflow Dashboard"
+              : "Employee Well-Being"
           }
           dateRange={dateRange}
           onDateRangeChange={setDateRange}
@@ -123,9 +135,7 @@ export default function Dashboard() {
 
         {/* Content Area */}
         <div className="flex-1 flex">
-          <main className="flex-1 p-6">
-            {renderContent()}
-          </main>
+          <main className="flex-1 p-6">{renderContent()}</main>
         </div>
       </div>
     </div>

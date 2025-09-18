@@ -29,7 +29,7 @@ export function GlobalFilterBar({
   extraControls,
 }: GlobalFilterBarProps) {
   return (
-    <div className={`bg-white rounded-lg border border-gray-200 p-6 ${className ?? ''}`}>
+    <div className={`bg-white rounded-lg border border-brand-primary-200 p-6 ${className ?? ''}`}>
       <div className="grid grid-cols-1 md:grid-cols-5 gap-4 mb-4">
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-2">Search</label>

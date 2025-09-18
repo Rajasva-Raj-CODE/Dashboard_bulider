@@ -21,6 +21,36 @@ const config: Config = {
         sm: 'calc(var(--radius) - 4px)',
       },
       colors: {
+        // Brand colors from logosoft.svg
+        brand: {
+          primary: {
+            DEFAULT: '#2C83EC', // Primary blue from logo
+            50: '#EBF4FF',
+            100: '#D6E8FF',
+            200: '#ADD1FF',
+            300: '#84BAFF',
+            400: '#5BA3FF',
+            500: '#2C83EC', // Main brand color
+            600: '#256BC7',
+            700: '#1E53A2',
+            800: '#173B7D',
+            900: '#102358',
+          },
+          secondary: {
+            DEFAULT: '#87C232', // Secondary green from logo
+            50: '#F0F9E8',
+            100: '#E1F3D1',
+            200: '#C3E7A3',
+            300: '#A5DB75',
+            400: '#87C232', // Main secondary color
+            500: '#7AB02C',
+            600: '#6D9E26',
+            700: '#608C20',
+            800: '#537A1A',
+            900: '#466814',
+          },
+        },
+        // System colors using brand colors
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         card: {

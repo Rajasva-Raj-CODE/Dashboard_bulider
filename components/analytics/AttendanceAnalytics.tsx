@@ -44,7 +44,7 @@ export function AttendanceAnalytics() {
 
       {/* Charts Row 1 */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div className="bg-white rounded-lg border border-gray-200 p-6">
+        <div className="bg-white rounded-lg border border-brand-primary-200 p-6">
           <BarChart
             title="Day Wise Attendance Analytics"
             data={dayWiseAbsenceData}
@@ -52,7 +52,7 @@ export function AttendanceAnalytics() {
           />
         </div>
 
-        <div className="bg-white rounded-lg border border-gray-200 p-6">
+        <div className="bg-white rounded-lg border border-brand-primary-200 p-6">
           <PieChart
             title="Attendance %"
             data={attendancePercentData}
@@ -63,7 +63,7 @@ export function AttendanceAnalytics() {
       </div>
 
       {/* Charts Row 2 */}
-      <div className="bg-white rounded-lg border border-gray-200 p-6">
+      <div className="bg-white rounded-lg border border-brand-primary-200 p-6">
         <BarChart
           title="Attendance Analytics"
           data={monthlyAttendanceData}
@@ -73,7 +73,7 @@ export function AttendanceAnalytics() {
 
       {/* Showcase */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div className="bg-white rounded-lg border border-gray-200 p-6">
+        <div className="bg-white rounded-lg border border-brand-primary-200 p-6">
           <AreaChart
             title="Present vs Absent"
             data={attendanceArea}
@@ -81,7 +81,7 @@ export function AttendanceAnalytics() {
             stacked
           />
         </div>
-        <div className="bg-white rounded-lg border border-gray-200 p-6">
+        <div className="bg-white rounded-lg border border-brand-primary-200 p-6">
           <ScatterChart
             title="Late Arrivals"
             data={attendanceScatter}
@@ -90,14 +90,14 @@ export function AttendanceAnalytics() {
         </div>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div className="bg-white rounded-lg border border-gray-200 p-6">
+        <div className="bg-white rounded-lg border border-brand-primary-200 p-6">
           <BubbleChart
             title="Department Absence"
             data={attendanceBubble}
             height={280}
           />
         </div>
-        <div className="bg-white rounded-lg border border-gray-200 p-6">
+        <div className="bg-white rounded-lg border border-brand-primary-200 p-6">
           <HeatmapChart
             title="Absence Heat"
             data={attendanceHeatmap}
@@ -106,14 +106,14 @@ export function AttendanceAnalytics() {
         </div>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div className="bg-white rounded-lg border border-gray-200 p-6">
+        <div className="bg-white rounded-lg border border-brand-primary-200 p-6">
           <TreemapChart
             title="Absence by Dept"
             data={attendanceTreemap}
             height={280}
           />
         </div>
-        <div className="bg-white rounded-lg border border-gray-200 p-6">
+        <div className="bg-white rounded-lg border border-brand-primary-200 p-6">
           <RadarChart
             title="Attendance Scores"
             data={attendanceRadar}
@@ -121,7 +121,7 @@ export function AttendanceAnalytics() {
           />
         </div>
       </div>
-      <div className="bg-white rounded-lg border border-gray-200 p-6">
+      <div className="bg-white rounded-lg border border-brand-primary-200 p-6">
         <MixedChart
           title="Absences vs Check-in"
           data={attendanceMixed}

@@ -10,6 +10,10 @@ const seededRandom = (seed: number) => {
   return x - Math.floor(x);
 };
 
+// Helpers to ensure identical SSR/CSR formatting
+const toPercent = (value: number, digits = 4) => `${value.toFixed(digits)}%`;
+const toPx = (value: number, digits = 4) => parseFloat(value.toFixed(digits));
+
 export function ChartSkeleton({ 
   className, 
   chartType = 'line',
@@ -34,7 +38,7 @@ export function ChartSkeleton({
                 <Skeleton 
                   key={i} 
                   className="w-8" 
-                  style={{ height: `${seededRandom(i * 7) * 100 + 50}px` }}
+                  style={{ height: toPx(seededRandom(i * 7) * 100 + 50) }}
                 />
               ))}
             </div>
@@ -51,8 +55,8 @@ export function ChartSkeleton({
                     key={i} 
                     className="absolute w-2 h-2 rounded-full" 
                     style={{ 
-                      left: `${(i / 7) * 100}%`, 
-                      bottom: `${seededRandom(i * 11) * 80 + 10}%` 
+                      left: toPercent((i / 7) * 100), 
+                      bottom: toPercent(seededRandom(i * 11) * 80 + 10) 
                     }}
                   />
                 ))}
@@ -76,8 +80,8 @@ export function ChartSkeleton({
                 key={i} 
                 className="absolute w-3 h-3 rounded-full" 
                 style={{ 
-                  left: `${seededRandom(i * 13) * 90 + 5}%`, 
-                  top: `${seededRandom(i * 17) * 80 + 10}%` 
+                  left: toPercent(seededRandom(i * 13) * 90 + 5), 
+                  top: toPercent(seededRandom(i * 17) * 80 + 10) 
                 }}
               />
             ))}
@@ -91,10 +95,10 @@ export function ChartSkeleton({
                 key={i} 
                 className="absolute rounded-full" 
                 style={{ 
-                  left: `${seededRandom(i * 19) * 85 + 5}%`, 
-                  top: `${seededRandom(i * 23) * 75 + 10}%`,
-                  width: `${seededRandom(i * 29) * 20 + 10}px`,
-                  height: `${seededRandom(i * 31) * 20 + 10}px`
+                  left: toPercent(seededRandom(i * 19) * 85 + 5), 
+                  top: toPercent(seededRandom(i * 23) * 75 + 10),
+                  width: toPx(seededRandom(i * 29) * 20 + 10),
+                  height: toPx(seededRandom(i * 31) * 20 + 10)
                 }}
               />
             ))}
@@ -108,7 +112,7 @@ export function ChartSkeleton({
                 key={i} 
                 className="w-full h-full" 
                 style={{ 
-                  opacity: seededRandom(i * 37) * 0.8 + 0.2 
+                  opacity: parseFloat((seededRandom(i * 37) * 0.8 + 0.2).toFixed(6))
                 }}
               />
             ))}
@@ -122,7 +126,7 @@ export function ChartSkeleton({
                 key={i} 
                 className="w-full h-full rounded" 
                 style={{ 
-                  opacity: seededRandom(i * 37) * 0.8 + 0.2 
+                  opacity: parseFloat((seededRandom(i * 37) * 0.8 + 0.2).toFixed(6))
                 }}
               />
             ))}
@@ -142,7 +146,7 @@ export function ChartSkeleton({
                 <Skeleton 
                   key={i} 
                   className="w-8" 
-                  style={{ height: `${seededRandom(i * 7) * 100 + 50}px` }}
+                  style={{ height: toPx(seededRandom(i * 7) * 100 + 50) }}
                 />
               ))}
             </div>
@@ -159,7 +163,7 @@ export function ChartSkeleton({
                 <Skeleton 
                   key={i} 
                   className="w-8" 
-                  style={{ height: `${seededRandom(i * 7) * 100 + 50}px` }}
+                  style={{ height: toPx(seededRandom(i * 7) * 100 + 50) }}
                 />
               ))}
             </div>
@@ -170,7 +174,7 @@ export function ChartSkeleton({
 
   return (
     <div 
-      className={cn('bg-white rounded-lg border border-gray-200 p-6', className)} 
+      className={cn('bg-white rounded-lg border border-brand-primary-200 p-6', className)} 
       style={{ height }}
       {...props}
     >

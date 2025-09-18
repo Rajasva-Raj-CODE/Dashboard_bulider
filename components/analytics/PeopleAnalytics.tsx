@@ -31,36 +31,36 @@ export function PeopleAnalytics() {
 
       {/* Showcase */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div className="bg-white rounded-lg border border-gray-200 p-6">
+        <div className="bg-white rounded-lg border border-brand-primary-200 p-6">
           <AreaChart title="Hires vs Exits" data={peopleArea} height={280} stacked />
         </div>
-        <div className="bg-white rounded-lg border border-gray-200 p-6">
+        <div className="bg-white rounded-lg border border-brand-primary-200 p-6">
           <ScatterChart title="Age vs Experience" data={peopleScatter} height={280} />
         </div>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div className="bg-white rounded-lg border border-gray-200 p-6">
+        <div className="bg-white rounded-lg border border-brand-primary-200 p-6">
           <BubbleChart title="Team Sizes" data={peopleBubble} height={280} />
         </div>
-        <div className="bg-white rounded-lg border border-gray-200 p-6">
+        <div className="bg-white rounded-lg border border-brand-primary-200 p-6">
           <HeatmapChart title="Attendance Heat" data={peopleHeatmap} height={280} />
         </div>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div className="bg-white rounded-lg border border-gray-200 p-6">
+        <div className="bg-white rounded-lg border border-brand-primary-200 p-6">
           <TreemapChart title="Department Split" data={peopleTreemap} height={280} />
         </div>
-        <div className="bg-white rounded-lg border border-gray-200 p-6">
+        <div className="bg-white rounded-lg border border-brand-primary-200 p-6">
           <RadarChart title="Behavioral Scores" data={peopleRadar} height={280} />
         </div>
       </div>
-      <div className="bg-white rounded-lg border border-gray-200 p-6">
+      <div className="bg-white rounded-lg border border-brand-primary-200 p-6">
         <MixedChart title="Interviews vs Offers" data={peopleMixed} height={280} />
       </div>
 
       {/* Charts Row 1 */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div className="bg-white rounded-lg border border-gray-200 p-6">
+        <div className="bg-white rounded-lg border border-brand-primary-200 p-6">
           <PieChart 
             title="Workforce Qualification"
             data={workforceQualificationData}
@@ -69,7 +69,7 @@ export function PeopleAnalytics() {
           />
         </div>
         
-        <div className="bg-white rounded-lg border border-gray-200 p-6">
+        <div className="bg-white rounded-lg border border-brand-primary-200 p-6">
           <BarChart 
             title="Workforce Graduation Year"
             data={workforceGraduationData}
@@ -80,7 +80,7 @@ export function PeopleAnalytics() {
 
       {/* Charts Row 2 */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div className="bg-white rounded-lg border border-gray-200 p-6">
+        <div className="bg-white rounded-lg border border-brand-primary-200 p-6">
           <BarChart 
             title="Workforce Demographics"
             data={workforceDemographicsData}
@@ -88,7 +88,7 @@ export function PeopleAnalytics() {
           />
         </div>
         
-        <div className="bg-white rounded-lg border border-gray-200 p-6">
+        <div className="bg-white rounded-lg border border-brand-primary-200 p-6">
           <PieChart 
             title="Workforce Location"
             data={workforceLocationData}

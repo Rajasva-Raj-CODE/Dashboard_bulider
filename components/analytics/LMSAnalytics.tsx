@@ -22,23 +22,23 @@ export function LMSAnalytics() {
       </div>
       {/* Showcase */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div className="bg-white rounded-lg border border-gray-200 p-6"><AreaChart title="Enrollments vs Completions" data={lmsArea} height={280} stacked /></div>
-        <div className="bg-white rounded-lg border border-gray-200 p-6"><ScatterChart title="Score vs Time" data={lmsScatter} height={280} /></div>
+        <div className="bg-white rounded-lg border border-brand-primary-200 p-6"><AreaChart title="Enrollments vs Completions" data={lmsArea} height={280} stacked /></div>
+        <div className="bg-white rounded-lg border border-brand-primary-200 p-6"><ScatterChart title="Score vs Time" data={lmsScatter} height={280} /></div>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div className="bg-white rounded-lg border border-gray-200 p-6"><BubbleChart title="Course Popularity" data={lmsBubble} height={280} /></div>
-        <div className="bg-white rounded-lg border border-gray-200 p-6"><HeatmapChart title="Sessions Heat" data={lmsHeatmap} height={280} /></div>
+        <div className="bg-white rounded-lg border border-brand-primary-200 p-6"><BubbleChart title="Course Popularity" data={lmsBubble} height={280} /></div>
+        <div className="bg-white rounded-lg border border-brand-primary-200 p-6"><HeatmapChart title="Sessions Heat" data={lmsHeatmap} height={280} /></div>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div className="bg-white rounded-lg border border-gray-200 p-6"><TreemapChart title="Courses by Type" data={lmsTreemap} height={280} /></div>
-        <div className="bg-white rounded-lg border border-gray-200 p-6"><RadarChart title="Course Qualities" data={lmsRadar} height={280} /></div>
+        <div className="bg-white rounded-lg border border-brand-primary-200 p-6"><TreemapChart title="Courses by Type" data={lmsTreemap} height={280} /></div>
+        <div className="bg-white rounded-lg border border-brand-primary-200 p-6"><RadarChart title="Course Qualities" data={lmsRadar} height={280} /></div>
       </div>
-      <div className="bg-white rounded-lg border border-gray-200 p-6"><MixedChart title="Enrollments vs Completion %" data={lmsMixed} height={280} /></div>
+      <div className="bg-white rounded-lg border border-brand-primary-200 p-6"><MixedChart title="Enrollments vs Completion %" data={lmsMixed} height={280} /></div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div className="bg-white rounded-lg border border-gray-200 p-6">
+        <div className="bg-white rounded-lg border border-brand-primary-200 p-6">
           <BarChart title="Top Courses by Enrollment" data={lmsTopCourses} height={300} />
         </div>
-        <div className="bg-white rounded-lg border border-gray-200 p-6">
+        <div className="bg-white rounded-lg border border-brand-primary-200 p-6">
           <PieChart title="Completion Status" data={lmsCompletion} height={300} />
         </div>
       </div>

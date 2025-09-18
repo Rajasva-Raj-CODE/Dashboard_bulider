@@ -22,23 +22,23 @@ export function RecruitmentAnalytics() {
       </div>
       {/* Showcase */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div className="bg-white rounded-lg border border-gray-200 p-6"><AreaChart title="Applications vs Interviews" data={recruitmentArea} height={280} stacked /></div>
-        <div className="bg-white rounded-lg border border-gray-200 p-6"><ScatterChart title="Exp vs Score" data={recruitmentScatter} height={280} /></div>
+        <div className="bg-white rounded-lg border border-brand-primary-200 p-6"><AreaChart title="Applications vs Interviews" data={recruitmentArea} height={280} stacked /></div>
+        <div className="bg-white rounded-lg border border-brand-primary-200 p-6"><ScatterChart title="Exp vs Score" data={recruitmentScatter} height={280} /></div>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div className="bg-white rounded-lg border border-gray-200 p-6"><BubbleChart title="Openings by Role" data={recruitmentBubble} height={280} /></div>
-        <div className="bg-white rounded-lg border border-gray-200 p-6"><HeatmapChart title="Applications Heat" data={recruitmentHeatmap} height={280} /></div>
+        <div className="bg-white rounded-lg border border-brand-primary-200 p-6"><BubbleChart title="Openings by Role" data={recruitmentBubble} height={280} /></div>
+        <div className="bg-white rounded-lg border border-brand-primary-200 p-6"><HeatmapChart title="Applications Heat" data={recruitmentHeatmap} height={280} /></div>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div className="bg-white rounded-lg border border-gray-200 p-6"><TreemapChart title="Headcount by Role" data={recruitmentTreemap} height={280} /></div>
-        <div className="bg-white rounded-lg border border-gray-200 p-6"><RadarChart title="Candidate Radar" data={recruitmentRadar} height={280} /></div>
+        <div className="bg-white rounded-lg border border-brand-primary-200 p-6"><TreemapChart title="Headcount by Role" data={recruitmentTreemap} height={280} /></div>
+        <div className="bg-white rounded-lg border border-brand-primary-200 p-6"><RadarChart title="Candidate Radar" data={recruitmentRadar} height={280} /></div>
       </div>
-      <div className="bg-white rounded-lg border border-gray-200 p-6"><MixedChart title="Applications vs Offers" data={recruitmentMixed} height={280} /></div>
+      <div className="bg-white rounded-lg border border-brand-primary-200 p-6"><MixedChart title="Applications vs Offers" data={recruitmentMixed} height={280} /></div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div className="bg-white rounded-lg border border-gray-200 p-6">
+        <div className="bg-white rounded-lg border border-brand-primary-200 p-6">
           <BarChart title="Recruitment Pipeline" data={recruitmentPipeline} height={300} />
         </div>
-        <div className="bg-white rounded-lg border border-gray-200 p-6">
+        <div className="bg-white rounded-lg border border-brand-primary-200 p-6">
           <PieChart title="Candidate Sources" data={recruitmentSources} height={300} />
         </div>
       </div>

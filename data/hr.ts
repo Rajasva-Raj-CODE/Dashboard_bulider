@@ -1,20 +1,20 @@
 import { Users, UserPlus, ClipboardList, CalendarCheck2 } from 'lucide-react';
 
 export const hrStats = [
-  { title: 'Active Employees', value: '261', icon: Users, bgColor: 'bg-emerald-100', iconColor: 'text-emerald-600', tooltip: 'Currently active employees' },
-  { title: 'New Joinees (30d)', value: '7', icon: UserPlus, bgColor: 'bg-indigo-100', iconColor: 'text-indigo-600', tooltip: 'Recent hires in last 30 days' },
-  { title: 'Open Policies', value: '12', icon: ClipboardList, bgColor: 'bg-amber-100', iconColor: 'text-amber-600', tooltip: 'Active HR policies' },
-  { title: 'Approved Leaves (30d)', value: '23', icon: CalendarCheck2, bgColor: 'bg-rose-100', iconColor: 'text-rose-600', tooltip: 'Leaves approved in last 30 days' },
+  { title: 'Active Employees', value: '261', icon: Users, bgColor: 'bg-brand-primary-50', iconColor: 'text-brand-primary-600', tooltip: 'Currently active employees' },
+  { title: 'New Joinees (30d)', value: '7', icon: UserPlus, bgColor: 'bg-brand-secondary-50', iconColor: 'text-brand-secondary-600', tooltip: 'Recent hires in last 30 days' },
+  { title: 'Open Policies', value: '12', icon: ClipboardList, bgColor: 'bg-brand-primary-100', iconColor: 'text-brand-primary-700', tooltip: 'Active HR policies' },
+  { title: 'Approved Leaves (30d)', value: '23', icon: CalendarCheck2, bgColor: 'bg-brand-secondary-100', iconColor: 'text-brand-secondary-700', tooltip: 'Leaves approved in last 30 days' },
 ];
 
 export const hrHeadcountTrend = {
   labels: Array.from({ length: 12 }, (_, i) => `M${i + 1}`),
-  datasets: [{ label: 'Headcount', data: [240,242,245,247,249,250,252,255,257,259,260,261], borderColor: '#2563EB', backgroundColor: '#2563EB' }],
+  datasets: [{ label: 'Headcount', data: [240,242,245,247,249,250,252,255,257,259,260,261], borderColor: '#2C83EC', backgroundColor: '#2C83EC' }],
 };
 
 export const hrAttritionByMonth = {
   labels: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'],
-  datasets: [{ label: 'Attrition', data: [1,0,2,1,0,1,1,0,1,0,0,1], backgroundColor: '#F59E0B' }],
+  datasets: [{ label: 'Attrition', data: [1,0,2,1,0,1,1,0,1,0,0,1], backgroundColor: '#87C232' }],
 };
 
 // Advanced datasets

@@ -14,7 +14,7 @@ interface StatsCardProps {
 
 export function StatsCard({ title, value, icon: Icon, bgColor, iconColor, tooltip }: StatsCardProps) {
   const card = (
-    <div className={`${bgColor} rounded-lg p-6 border border-gray-200`}>
+    <div className={`${bgColor} rounded-lg p-6 border border-brand-primary-200`}>
       <div className="flex items-center justify-between">
         <div>
           <p className="text-3xl font-bold text-gray-900">{value}</p>

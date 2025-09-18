@@ -145,7 +145,7 @@ export function ChartActionsMenu({
       </DropdownMenuTrigger>
       <DropdownMenuContent
         align="end"
-        className="w-60 rounded-xl shadow-lg border border-gray-100 dark:border-gray-700"
+        className="w-60 rounded-xl shadow-lg border border-brand-primary-200 dark:border-brand-primary-700"
       >
         <DropdownMenuLabel className="text-sm text-gray-500">
           Export Options

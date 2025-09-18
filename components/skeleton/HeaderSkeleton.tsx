@@ -17,7 +17,7 @@ export function HeaderSkeleton({
   showFilterButton = true
 }: HeaderSkeletonProps) {
   return (
-    <header className={cn('bg-white border-b border-gray-200 px-6 py-4 sticky top-0 z-20', className)}>
+    <header className={cn('bg-white border-b border-brand-primary-200 px-6 py-4 sticky top-0 z-20', className)}>
       <div className="flex items-center justify-between">
         <div className="flex items-center space-x-4">
           <Skeleton className="h-8 w-64" />
